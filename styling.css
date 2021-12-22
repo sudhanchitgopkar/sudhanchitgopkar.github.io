@@ -17,8 +17,11 @@ a:link, a:visited {
     color: #B84E4E;
   }
   
+  i {
+      color: #dddddd;
+  }
   /* mouse over link */
-  a:hover {
+  a:hover, i:hover {
     color: #ff6d6d;
   }
 
