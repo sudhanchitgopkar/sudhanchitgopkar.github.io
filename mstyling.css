@@ -9,14 +9,18 @@ h1 {
     margin-bottom: 3vh;
 }
 
+i {
+  font-size: larger;
+}
+
 p {
-    font-size: 1vh;
+    font-size: 1.2vh;
 }
 
 .r {
     padding: 0%;
     margin: 0%;
-    min-height: 200px;
+    min-height: 255px;
 }
 
 a:link, a:visited {

@@ -42,7 +42,7 @@ function setup() {
     modCounter=1;
     flag = false;
   
-    circle(width/2,height/2,200);
+    circle(width/2,height/2,250);
 }
 
 function draw() {
@@ -55,10 +55,10 @@ function draw() {
     strokeWeight(0.5);
     //stroke(map(currPoint,0,numPoints,0,255),69,69);
     stroke('rgba(255, 109, 109, 0.3)');
-    line(97*cos((currPoint/numPoints) * 2*PI) + width/2,
-    97*sin((currPoint/numPoints) * 2*PI) + height/2,
-    97*cos((modVal*currPoint/numPoints%numPoints) * 2*PI) + width/2,
-    97*sin((modVal*currPoint/numPoints%numPoints) * 2*PI) + height/2);
+    line(122*cos((currPoint/numPoints) * 2*PI) + width/2,
+    122*sin((currPoint/numPoints) * 2*PI) + height/2,
+    122*cos((modVal*currPoint/numPoints%numPoints) * 2*PI) + width/2,
+    122*sin((modVal*currPoint/numPoints%numPoints) * 2*PI) + height/2);
     currPoint++;
     modCounter++;
   }
@@ -66,10 +66,10 @@ function draw() {
   if(flag) {
     strokeWeight(1.2);
     stroke(0);
-    line(97*cos((currPoint/numPoints) * 2*PI) + width/2,
-    97*sin((currPoint/numPoints) * 2*PI) + height/2,
-    97*cos((modVal*currPoint/numPoints%numPoints) * 2*PI) + width/2,
-    97*sin((modVal*currPoint/numPoints%numPoints) * 2*PI) + height/2);
+    line(122*cos((currPoint/numPoints) * 2*PI) + width/2,
+    122*sin((currPoint/numPoints) * 2*PI) + height/2,
+    122*cos((modVal*currPoint/numPoints%numPoints) * 2*PI) + width/2,
+    122*sin((modVal*currPoint/numPoints%numPoints) * 2*PI) + height/2);
     currPoint--;
     modCounter--;
     
