@@ -24,12 +24,21 @@ a:hover {
     text-decoration: none;
     color: #cdcdcd;
 }
-
+@media only screen and (max-width: 768px) {
 div {
     text-align: center;
     width: 100%;
-    margin-top: 82vh;
+    margin-top: 50vh;
 }
+}
+
+@media only screen and (min-width: 769px) {
+    div {
+        text-align: center;
+        width: 100%;
+        margin-top: 80vh;
+    }
+    }
 
 span {
     background-color: black;
