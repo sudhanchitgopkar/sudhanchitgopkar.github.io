@@ -1,0 +1,38 @@
+body {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+h1 {
+    font-size: 4vw;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 2vh;
+}
+
+p {
+    font-size: 0.9rem;
+    color: gray;
+    font-family: 'Roboto', sans-serif, regular;
+}
+
+a {
+    background-color: black;
+    color: #8a8a8a;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #cdcdcd;
+}
+
+div {
+    text-align: center;
+    width: 100%;
+    margin-top: 82vh;
+}
+
+span {
+    background-color: black;
+    display: inline-flex;
+    width: 0.1rem;
+  }
