@@ -15,7 +15,6 @@ p {
 }
 
 a {
-    background-color: black;
     color: #8a8a8a;
     text-decoration: none;
 }
@@ -28,7 +27,7 @@ a:hover {
 div {
     text-align: center;
     width: 100%;
-    margin-top: 50vh;
+    margin-top: 40vh;
 }
 }
 
