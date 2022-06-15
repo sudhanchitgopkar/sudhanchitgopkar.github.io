@@ -1,0 +1,46 @@
+body {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+h1 {
+    font-size: 4vw;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 2vh;
+}
+
+p {
+    font-size: 0.9rem;
+    color: gray;
+    font-family: 'Roboto', sans-serif, regular;
+}
+
+a {
+    color: #8a8a8a;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #cdcdcd;
+}
+@media only screen and (max-width: 768px) {
+div {
+    text-align: center;
+    width: 100%;
+    margin-top: 40vh;
+}
+}
+
+@media only screen and (min-width: 769px) {
+    div {
+        text-align: center;
+        width: 100%;
+        margin-top: 80vh;
+    }
+    }
+
+span {
+    background-color: black;
+    display: inline-flex;
+    width: 0.1rem;
+  }
