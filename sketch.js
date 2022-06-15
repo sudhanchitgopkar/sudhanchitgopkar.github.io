@@ -4,6 +4,7 @@ let curr;
 let points = [];
 let colors = [];
 let w;
+let vert;
 
 function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
@@ -15,18 +16,21 @@ function setup() {
   canvas.position(0,0);
   canvas.style('z-index', '-1');
   colorMode(HSB);
+
   angle = 0;
   if (windowWidth < 750) w = 4; //mobile
   else if (windowWidth < 1025) w = 5; //tablet
   else w = 8; //desktop
+  vert = width/w;
+  prev = -1;
+
 
   noFill();
-  prev = -1;
   
   points.push(createVector(random(-50,50),random(-50,50),random(-50,50)));
   let c = color(255,0,0);
   colors.push(c)
-}
+} //setup
 
 function plotPoints() {
     curr = floor(random(5));
@@ -34,46 +38,46 @@ function plotPoints() {
   temp = points[points.length-1];
   
   if (curr === 0) {
-    let c = color(255,0,0);
-    colors.push(c);
+    //let c = color(255,0,0);
+    //colors.push(c);
     points.push(createVector(
-      (temp.x + (-width/w ))/2,
-      (temp.y + (-width/w ))/2,
-      (temp.z + (-width/w ))/2
+      (temp.x + (-vert ))/2,
+      (temp.y + (-vert ))/2,
+      (temp.z + (-vert ))/2
     ));   
   } else if (curr === 1) {
-    let c = color(0,255,0);
-    colors.push(c);
+    //let c = color(0,255,0);
+    //colors.push(c);
     points.push(createVector(
-      (temp.x + (width/w))/2,
-      (temp.y + (-width/w))/2,
-      (temp.z + (-width/w))/2
+      (temp.x + (vert))/2,
+      (temp.y + (-vert))/2,
+      (temp.z + (-vert))/2
     ));   
   } else if (curr === 2) {
-    let c = color(0,255,255);
-    colors.push(c);
+    //let c = color(0,255,255);
+    //colors.push(c);
     points.push(createVector(
       (temp.x + (0))/2,
       (temp.y + (0))/2,
-      (temp.z + (width/w))/2
+      (temp.z + (vert))/2
     ));   
   } else if (curr === 3) {
-    let c = color(255,255,0);
-    colors.push(c);
+    //let c = color(255,255,0);
+    //colors.push(c);
     points.push(createVector(
-      (temp.x + (width/w))/2,
-      (temp.y + (width/w))/2,
-      (temp.z + (-width/w))/2
+      (temp.x + (vert))/2,
+      (temp.y + (vert))/2,
+      (temp.z + (-vert))/2
     ));   
   } else {
-    let c = color(255,0,255);
-    colors.push(c);
+    //let c = color(255,0,255);
+   //colors.push(c);
     points.push(createVector(
-      (temp.x + (-width/w))/2,
-      (temp.y + (width/w))/2,
-      (temp.z + (-width/w))/2
+      (temp.x + (-vert))/2,
+      (temp.y + (vert))/2,
+      (temp.z + (-vert))/2
     ));   
-  }
+  } //if
   
   prev = curr;
   
@@ -84,9 +88,9 @@ function plotPoints() {
   strokeWeight(0.9);
   for (let i = 1; i < points.length; i++) {
     //stroke(colors[i]);
-    stroke(map(points[i].z,-width/w ,width/w ,0,255),255,255)
+    stroke(map(points[i].z,-vert ,vert ,0,255),255,255)
     point(points[i].x,points[i].y,points[i].z);
-  }
+  } //for
   
 } //plotPoints
 
@@ -94,21 +98,21 @@ function prism() {
 noFill();
   strokeWeight(0.5);
   beginShape();
-  vertex(-width/w, -width/w, -width/w);
-  vertex( width/w, -width/w, -width/w);
-  vertex(   0 ,    0 ,  width/w );
+  vertex(-vert, -vert, -vert);
+  vertex(vert, -vert, -vert);
+  vertex(0, 0, vert);
 
-  vertex( width/w , -width/w , -width/w );
-  vertex( width/w ,  width/w , -width/w );
-  vertex(   0 ,    0 ,  width/w );
+  vertex(vert, -vert, -vert );
+  vertex(vert, vert, -vert );
+  vertex(0, 0, vert);
 
-  vertex( width/w , width/w , -width/w );
-  vertex(-width/w , width/w , -width/w );
-  vertex(   0 ,   0 ,  width/w );
+  vertex(vert, vert, -vert);
+  vertex(-vert, vert, -vert);
+  vertex(0, 0, vert);
 
-  vertex(-width/w ,  width/w , -width/w );
-  vertex(-width/w , -width/w , -width/w );
-  vertex(   0 ,    0 ,  width/w );
+  vertex(-vert, vert, -vert);
+  vertex(-vert, -vert, -vert);
+  vertex(0, 0, vert);
   endShape();
   fill(255);
 } //prism
@@ -124,4 +128,4 @@ function draw() {
   prism();
   plotPoints();
   angle += 0.01;
-}
+} //draw
