@@ -85,10 +85,10 @@ function plotPoints() {
   line(temp.x,temp.y,temp.z,points[points.length-1].x,points[points.length-1].y,points[points.length-1].z);
   //line(0,0,100 ,points[points.length-1].x,points[points.length-1].y,points[points.length-1].z)
   
-  strokeWeight(0.9);
+  strokeWeight(3);
   for (let i = 1; i < points.length; i++) {
     //stroke(colors[i]);
-    stroke(map(points[i].z,-vert ,vert ,0,255),255,255)
+    stroke(map(points[i].z,-vert ,vert ,150,220),170,255)
     point(points[i].x,points[i].y,points[i].z);
   } //for
   
@@ -114,8 +114,18 @@ noFill();
   vertex(-vert, -vert, -vert);
   vertex(0, 0, vert);
   endShape();
-  fill(255);
 } //prism
+
+function cube() {
+  strokeWeight(0.5);
+  beginShape();
+  vertex(-vert, -vert, -vert);
+  vertex(vert, -vert, -vert);
+  vertex(vert, vert, -vert);
+  vertex(-vert, vert, -vert);
+  vertex(-vert, -vert, -vert);
+  endShape();
+}
 
 function draw() {
   stroke(255);
@@ -125,7 +135,9 @@ function draw() {
   if (mouseIsPressed)
     rotateY(map(mouseX,0,width,0,TWO_PI));
   rotateX(PI/2);
-  prism();
+  //prism();
+  cube();
+  strokeWeight(2);
   plotPoints();
   angle += 0.01;
 } //draw
