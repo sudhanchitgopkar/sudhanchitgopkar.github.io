@@ -6,11 +6,9 @@ let colors = [];
 let w;
 let vert;
 
-/*
 function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
 }
-*/
 
 function setup() {
   frameRate(60);
