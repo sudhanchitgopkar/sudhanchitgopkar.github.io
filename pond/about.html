@@ -1,0 +1,16 @@
+
+<html>
+    <body>
+    <style>
+        *{font-family:'Courier New'; background-color: black; color: white;}
+    </style>
+
+    <h1>Why is this sim slow?</h1>
+    <p><b>1)You're running old hardware.</b></p>
+    <p>This likely isn't the reason unless you're really pushing the sim, your CPU is extremely old, and you have many backgound tasks running. Without a dedicated server running the sim, all rendering is currently being done client-side, which means performance may vary greatly across different devices.</p>
+    <p><b>2)You're getting unlucky.</b></p>
+    <p>This is a serious flaw in my current approach. The way I'm currently guaranteeing that a new object (one we haven't already chosen in this particular timestep) is chosen every iteration, is by using an auxiliary HashSet. You can check out the source code here, but at its core, I'm simply adding every new element we uncover during a particular timestep to a HashSet. That way, I can check in every iteration during that timestep if we've chosen an element that we've already looked at by checking if it is contained in the HashSet.</p>
+    <p>The initial logic here was that because adding, removing, and checking for an object in a HashSet is O(1), this would be faster than keeping track of it another way. The problem is that if we *have* chosen a seen element, we keep looping till we've found one that isn't seen. Fine when we're dealing with a few elements, but a bad approach when we're dealing with many. If we have 100 elements and we're choosing all 100 per timestep, when we get to the last element, there's a 1/100 chance that we'll choose the correct one. That slows down the sim *a lot* during some runs.</p>
+    <p>Fix seems relatively straightforward - haven't gotten a sec to implement it though. We can still use a HashSet, except this time keep track of *unseen* values. Then every time we see a value, we remove it (O(1)) from the HashSet. Then we randomly choose a value from the HashSet for the next iteration. Even this isn't optimat though because HashSets aren't iterable, meaning that we'll have to convert the set to an array (O(n)) and then choose the value (O(1)).</p>
+</body>
+</html>
