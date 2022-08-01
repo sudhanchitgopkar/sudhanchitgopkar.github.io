@@ -17,6 +17,7 @@ var timeStep;
 
 var fpsSlider;
 var pondSizeSlider;
+var iterationsAllowed;
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
@@ -33,6 +34,12 @@ function setup() {
     pondSizeSlider.position(windowWidth-100, 50);
     pondSizeSlider.style('width', '80px');
 
+    if (!iterationsAllowed) {
+        iterationsAllowed = createSlider(1, pondSizeSlider.value(), Math.floor(pondSizeSlider.value()/2), 1);
+    } //if
+    iterationsAllowed.position(windowWidth-100, 90);
+    iterationsAllowed.style('width', '80px');
+
     totalObj = 52;
     pondSize = pondSizeSlider.value();
     pond = [];
@@ -47,7 +54,7 @@ function setup() {
     totalCaught = 0;
     avgCaught = 0;
     iteration = 1;
-    iterationsPerStep = 5;
+    iterationsPerStep = iterationsAllowed.value();
     timeStep = 1;
 
     for (var i = 0; i < pondSize; i++) {
@@ -117,10 +124,12 @@ function showMetrics() {
 function handleSliders() {
     frameRate(fpsSlider.value());
     if (pondSize != pondSizeSlider.value()) {
-        background(255,0,0);
+        iterationsAllowed = null;
+        setup();
+    } //if
+    if (iterationsPerStep != iterationsAllowed.value()) {
         setup();
     }
-
 }
 
 function windowResized() {
