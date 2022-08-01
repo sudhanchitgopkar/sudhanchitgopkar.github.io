@@ -16,13 +16,25 @@ var iterationsPerStep;
 var timeStep;
 
 var fpsSlider;
+var pondSizeSlider;
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
-    //frameRate(1);
+
+    if (!fpsSlider) {
+        fpsSlider = createSlider(1, 60, 2, 1);
+    } //if
+    fpsSlider.position(windowWidth-100, 10);
+    fpsSlider.style('width', '80px');
+
+    if (!pondSizeSlider) {
+        pondSizeSlider = createSlider(10, 100, 10, 1);
+    } //if
+    pondSizeSlider.position(windowWidth-100, 50);
+    pondSizeSlider.style('width', '80px');
 
     totalObj = 52;
-    pondSize = 10;
+    pondSize = pondSizeSlider.value();
     pond = [];
 
     pFish = 0.5;
@@ -42,21 +54,18 @@ function setup() {
         pond.push((random(1) < pFish));
     } //for
 
-    fpsSlider = createSlider(1, 60, 2, 1);
-    fpsSlider.position(windowWidth-100, 10);
-    fpsSlider.style('width', '80px');
 } //setup
 
 function draw() {
     background(0);
-    frameRate(fpsSlider.value());
+    handleSliders();
     drawPond();
     if (iteration <= iterationsPerStep) fish();
     else (replenish());
 } //draw
 
 function drawPond() {
-    var objSize = 50;
+    var objSize = map(pondSize,10,100,50,15);
     for (var i = 0; i < pondSize; i++) {
         if (fished.has(i)) {
             if (pond[i]) fill(0,255,0);
@@ -103,6 +112,15 @@ function showMetrics() {
     "\nTimestep: " + timeStep + "\t Average fish caught per timestep: " + avgCaught;
     fill(255);
     text(msg,0,20);
+}
+
+function handleSliders() {
+    frameRate(fpsSlider.value());
+    if (pondSize != pondSizeSlider.value()) {
+        background(255,0,0);
+        setup();
+    }
+
 }
 
 function windowResized() {
