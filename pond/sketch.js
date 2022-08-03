@@ -16,13 +16,43 @@ var iterationsPerStep;
 var timeStep;
 
 var fpsSlider;
+var pondSizeSlider;
+var iterationsAllowed;
+
+var alive;
+var dead;
+var unknown;
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
-    //frameRate(1);
+
+    alive = loadImage('alive.png');
+    alive.resize(8,8);
+    dead = loadImage('dead.png');
+    dead.resize(80,80);
+    unknown = loadImage('unknown.png');
+    unknown.resize(80,80);
+
+    if (!fpsSlider) {
+        fpsSlider = createSlider(1, 60, 2, 1);
+    } //if
+    fpsSlider.position(windowWidth-100, 10);
+    fpsSlider.style('width', '80px');
+
+    if (!pondSizeSlider) {
+        pondSizeSlider = createSlider(10, 100, 10, 1);
+    } //if
+    pondSizeSlider.position(windowWidth-100, 50);
+    pondSizeSlider.style('width', '80px');
+
+    if (!iterationsAllowed) {
+        iterationsAllowed = createSlider(1, pondSizeSlider.value(), Math.floor(pondSizeSlider.value()/2), 1);
+    } //if
+    iterationsAllowed.position(windowWidth-100, 90);
+    iterationsAllowed.style('width', '80px');
 
     totalObj = 52;
-    pondSize = 10;
+    pondSize = pondSizeSlider.value();
     pond = [];
 
     pFish = 0.5;
@@ -35,38 +65,63 @@ function setup() {
     totalCaught = 0;
     avgCaught = 0;
     iteration = 1;
-    iterationsPerStep = 5;
+    iterationsPerStep = iterationsAllowed.value();
     timeStep = 1;
 
     for (var i = 0; i < pondSize; i++) {
         pond.push((random(1) < pFish));
     } //for
 
-    fpsSlider = createSlider(1, 60, 2, 1);
-    fpsSlider.position(windowWidth-100, 10);
-    fpsSlider.style('width', '80px');
 } //setup
 
 function draw() {
     background(0);
-    frameRate(fpsSlider.value());
+    handleSliders();
     drawPond();
     if (iteration <= iterationsPerStep) fish();
     else (replenish());
 } //draw
 
 function drawPond() {
-    var objSize = 50;
-    for (var i = 0; i < pondSize; i++) {
-        if (fished.has(i)) {
-            if (pond[i]) fill(0,255,0);
-            else fill(255,0,0);
-        } else {
-            fill(100,100,100);
-        } //if
+    //var objSize = map(pondSize,10,100,50,12);
+    var objSize = 70;
+    if (pondSize < 20) {
+        for (var i = 0; i < pondSize; i++) {
+            if (fished.has(i)) {
+                if (pond[i]) {
+                    image(alive,map(i,0,pondSize,objSize,windowWidth-objSize),height/2,objSize,objSize);
+                }
+                else {
+                    image(dead,map(i,0,pondSize,objSize,windowWidth-objSize),height/2,objSize,objSize);
+                }
+            } else {
+                image(unknown,map(i,0,pondSize,objSize,windowWidth-objSize),height/2,objSize,objSize);
+            } //if
+        } //for
+    } else {
+        var numRows = Math.ceil(pondSize/20.0)
+        for (var i = 0; i < numRows; i++) {
+            for (var j = 0; j < 20; j++) {
+                if (fished.has((i*20)+j)) {
+                    if (pond[(i*20)+j]) {
+                        image(alive,map(j,0,20,objSize,windowWidth-objSize),map(i,0,numRows,windowHeight*0.25,windowHeight*0.75),
+                        objSize,objSize);
+                    }
+                    else {
+                        image(dead,map(j,0,20,objSize,windowWidth-objSize),map(i,0,numRows,windowHeight*0.25,windowHeight*0.75),
+                        objSize,objSize);
+                    }
+                } else if ((i*20)+j < pondSize) {
+                    image(unknown,map(j,0,20,objSize,windowWidth-objSize),map(i,0,numRows,windowHeight*0.25,windowHeight*0.75),
+                        objSize,objSize);
+                } else {
+                    fill(0);
+                } //if
+                //square(map(j,0,20,0,windowWidth),map(i,0,numRows,windowHeight*0.25,windowHeight*0.75),objSize);
+            } //for
+        } //for
 
-        circle(map(i,0,pondSize,objSize,windowWidth-objSize),height/2,objSize);
-    } //for
+    } //if
     showMetrics();
 } //drawPond
 
@@ -103,6 +158,20 @@ function showMetrics() {
     "\nTimestep: " + timeStep + "\t Average fish caught per timestep: " + avgCaught;
     fill(255);
     text(msg,0,20);
+}
+
+function handleSliders() {
+    text("FPS: " + fpsSlider.value(),fpsSlider.x - 55, 17);
+    text("Pond Size : " + pondSizeSlider.value(),pondSizeSlider.x - 95, 57);
+    text("Iterations/Timestep : " + iterationsAllowed.value(),iterationsAllowed.x - 135, 97);
+    frameRate(fpsSlider.value());
+    if (pondSize != pondSizeSlider.value()) {
+        iterationsAllowed = null;
+        setup();
+    } //if
+    if (iterationsPerStep != iterationsAllowed.value()) {
+        setup();
+    }
 }
 
 function windowResized() {
