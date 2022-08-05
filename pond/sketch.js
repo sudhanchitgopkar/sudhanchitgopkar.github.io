@@ -86,17 +86,15 @@ function draw() {
 } //draw
 
 function drawPond() {
-    //var objSize = map(pondSize,10,100,50,12);
     var objSize = 70;
     if (pondSize < 20) {
         for (var i = 0; i < pondSize; i++) {
             if (fished.has(i)) {
                 if (pond[i]) {
                     image(alive,map(i,0,pondSize,objSize,windowWidth-objSize),height/2,objSize,objSize);
-                }
-                else {
+                } else {
                     image(dead,map(i,0,pondSize,objSize,windowWidth-objSize),height/2,objSize,objSize);
-                }
+                } //if
             } else {
                 image(unknown,map(i,0,pondSize,objSize,windowWidth-objSize),height/2,objSize,objSize);
             } //if
@@ -120,10 +118,8 @@ function drawPond() {
                 } else {
                     fill(0);
                 } //if
-                //square(map(j,0,20,0,windowWidth),map(i,0,numRows,windowHeight*0.25,windowHeight*0.75),objSize);
             } //for
         } //for
-
     } //if
     showMetrics();
 } //drawPond
@@ -132,7 +128,7 @@ function fish() {
     var target = Math.floor(random(pondSize));
     if (fished.has(target)) {
         return;
-    } //while
+    } //if
     
     if (pond[target]) currCaught++;
     fished.add(target);
@@ -158,6 +154,7 @@ function calcMetrics() {
 
 function drawGraph() {
     colorMode(HSB);
+
     for (var i = 1; i < catchList.length; i++) {
         var prevX = map(i-1,0,catchList.length,100,windowWidth-100);
         var prevY = map(catchList[i-1],0,pondSize,windowHeight-10,windowHeight-700);
@@ -168,10 +165,10 @@ function drawGraph() {
         line(prevX,prevY,currX,currY);
         circle(currX,currY,2);
     } //for
+
     colorMode(RGB);
     stroke(255);
-    //text(windowWidth/2,windowHeight/2,catchList[i]);
-}
+} //drawGraph
 
 function showMetrics() {
     let msg = "Iteration: " + iteration + "\tFish caught in current iteration: " + currCaught +
@@ -191,8 +188,8 @@ function handleSliders() {
     } //if
     if (iterationsPerStep != iterationsAllowed.value()) {
         setup();
-    }
-}
+    } //if
+} //handleSliders
 
 function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
