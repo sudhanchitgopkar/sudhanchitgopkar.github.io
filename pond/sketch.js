@@ -34,7 +34,7 @@ function setup() {
     unknown.resize(80,80);
 
     if (!fpsSlider) {
-        fpsSlider = createSlider(1, 60, 2, 1);
+        fpsSlider = createSlider(1, 60, 60, 1);
     } //if
     fpsSlider.position(windowWidth-100, 10);
     fpsSlider.style('width', '80px');
@@ -68,6 +68,8 @@ function setup() {
     iterationsPerStep = iterationsAllowed.value();
     timeStep = 1;
 
+    metricHolder = [];
+
     for (var i = 0; i < pondSize; i++) {
         pond.push((random(1) < pFish));
     } //for
@@ -78,6 +80,7 @@ function draw() {
     background(0);
     handleSliders();
     drawPond();
+    drawGraph();
     if (iteration <= iterationsPerStep) fish();
     else (replenish());
 } //draw
@@ -145,12 +148,29 @@ function replenish() {
 }
 
 function calcMetrics() {
-    catchList.push(currCaught);
     totalCaught += currCaught;
     timeStep++;
     avgCaught = totalCaught/timeStep;
+    catchList.push(avgCaught);
     currCaught = 0;
     iteration = 1;
+}
+
+function drawGraph() {
+    colorMode(HSB);
+    for (var i = 1; i < catchList.length; i++) {
+        var prevX = map(i-1,0,catchList.length,100,windowWidth-100);
+        var prevY = map(catchList[i-1],0,pondSize,windowHeight-10,windowHeight-700);
+        var currX = map(i,0,catchList.length,100,windowWidth-100);
+        var currY = map(catchList[i],0,pondSize,windowHeight-10,windowHeight-700);
+        stroke(map(i,1,catchList.length,0,255),255,255);
+        circle(prevX,prevY,2);
+        line(prevX,prevY,currX,currY);
+        circle(currX,currY,2);
+    } //for
+    colorMode(RGB);
+    stroke(255);
+    //text(windowWidth/2,windowHeight/2,catchList[i]);
 }
 
 function showMetrics() {
