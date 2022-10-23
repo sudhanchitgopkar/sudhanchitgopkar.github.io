@@ -1,0 +1,179 @@
+@import url("https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/source-code-pro.min.css");
+
+body {
+    background-color: black;
+    margin: 0;
+    font-family: 'Source Code Pro', sans-serif;
+}
+
+main {
+    margin-top: -50px;
+}
+
+.grid-container {
+    display: grid;
+    top: -50px;
+    align-items: center;
+    grid-template-columns: 10% auto;
+    grid-auto-rows: 9fr 1fr;
+    z-index: 0;
+}
+
+#graph-container {
+    width: 100%;
+    height: 90vh;
+    grid-column-start: 1;
+    grid-column-end: end;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+#title-container {
+    float: left;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: end;
+    margin-left: 8px;
+}
+
+h3 {
+    color: #dbdbdb;
+    font-size: 1.5em;
+    line-height: 0.5em;
+}
+
+#search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-column-start: 2;
+    grid-column-end: end;
+    grid-row-start: 2;
+    grid-row-end: end;
+}
+
+form {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+#search-field {
+    border: none;
+    width: 75%;
+    height: 100%;
+    margin-right: 8px;
+    margin-bottom: 0;
+    padding: 16px;
+    border: solid;
+    border-color: #dbdbdb;
+    border-radius: 5px;
+    background-color: black;
+    font-family: 'Source Code Pro', sans-serif;
+    font-size: 1.15em;
+    color: #dbdbdb;
+}
+
+input::placeholder {
+    color: #dbdbdb;
+}
+
+#submit-button {
+    cursor: pointer;
+    width: 20%;
+    height: 100%;
+    margin-right: 16px;
+    padding: 16px;
+    border: solid;
+    border-color: #dbdbdb;
+    border-radius: 5px;
+    background-color: black;
+    font-family: 'Source Code Pro', sans-serif;
+    font-size: 1.1em;
+    color: #dbdbdb;
+}
+
+#submit-button:hover {
+    background-color: #dbdbdb;
+    color: black;
+    font-weight: bold;
+}
+
+#about-pullout {
+    display: block;
+    position: relative;
+    width: 30px;
+    top: 25px;
+    left: 25px;
+    z-index: 1;
+}
+
+#about-pullout input {
+    display: block;
+    width: 30px;
+    height: 27px;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+}
+
+#about-pullout span {
+    display: block;
+    width: 30px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background-color: #dbdbdb;
+    border-radius: 3px;
+    z-index: 1;
+}
+
+#about-info {
+    display: block;
+    position: absolute;
+    overflow: auto;
+    width: 20em;
+    height: 75vh;
+    margin: -60px 0 0 -50px;
+    padding: 75px 50px 5px 50px;
+    font-size: 2.1vh;
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    color: #dbdbdb;
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+
+    -webkit-font-smoothing: antialiased;
+
+    -ms-overflow-style: none;  /* Hide scrollbar in IE and Edge */
+    scrollbar-width: none;  /* Hide scrollbar in Firefox */
+}
+
+/* Hide scrollbar in Chrome, Safari, and Opera */
+#about-info::-webkit-scrollbar {
+    display: none;
+}
+
+#about-pullout input:checked ~ div {
+    transform: none;
+}
+
+#about-pullout h3 {
+    margin-bottom: 1em;
+}
+
+#about-pullout ul {
+    margin-top: -0.5em;
+}

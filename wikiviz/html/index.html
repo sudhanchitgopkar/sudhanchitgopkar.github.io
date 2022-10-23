@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WikiViz</title>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
+    <script src="https://kit.fontawesome.com/33dfe074ae.js" crossorigin="anonymous"></script>
+
+    <script src="../javascript/jquery-3.6.1.js"></script>
+    <script src="../javascript/index.js"></script>
+    <script src="../javascript/viz.js"></script>
+    <script src="../javascript/addScreenPositionFunction.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+  </head>
+
+  <body>
+
+    <div id="about-pullout">
+      <input type="checkbox" />
+      <span></span>
+      <span></span>
+      <span></span>
+      <div id="about-info">
+        <h3>About WikiVis</h3>
+        <p>
+          Ever wanted to see how Wikipedia articles connect to each other? Well, now you can! Introducing WikiVis - a new, elegant way to visualize data. In 3D! Enter a word and see where it takes you!
+        </p>
+        <p>
+          Enter the title of the Wikipedia article you are interested inand click the Visualize button.
+        </p>
+        <p>
+          Application Controls
+          <br>
+        </p>
+        <ul>
+          <li>p: Play/Pause visualization animation</li>
+          <li>a/d: Navigate between nodes</li>
+          <li>Enter: Go to article corresponding to current node</li>
+          <li>h: hide/show labels</li>
+          <li>Left Mouse Button: Click and drag to move visualization around</li>
+        </ul>
+        <p>
+          Created by
+          <br>
+        </p>
+        <ul>
+          <li>Sudhan Chitgopkar</li>
+          <li>Kewal Kalsi</li>
+          <li>Chenjun Ren</li>
+          <li>Ethan Tong</li>
+        </ul>
+      </div>
+    </div>
+  
+    <main>
+      <div class="grid-container">
+        <div class="grid-item" id="graph-container">
+          <div id="sketchDiv"></div>
+        </div>
+        <div class="grid-item footer-nav" id="title-container">
+          <h3>WikiVis</h3>
+        </div>
+        <div class="grid-item footer-nav" id="search-container">
+          <form action="" id="form-input" method="get">
+            <input type="text" placeholder="Insert keyword" id="search-field" name="search-field">
+            <button type="submit" id="submit-button" onclick="visualize()">Visualize</button>
+          </form>
+        </div>
+      </div>
+    </main>
+  
+  </body>
+</html>
