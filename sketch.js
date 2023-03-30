@@ -33,7 +33,7 @@ function setup() {
 } //setup
 
 function plotPoints() {
-    if (points.length > 1000) {
+    if (points.length > 50000) {
 	points = [];
 	points.push(createVector(random(-50,50),random(-50,50),random(-50,50)));
     } //if
