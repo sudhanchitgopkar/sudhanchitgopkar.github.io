@@ -33,9 +33,14 @@ function setup() {
 } //setup
 
 function plotPoints() {
+    if (points.length > 1000) {
+	points = [];
+	points.push(createVector(random(-50,50),random(-50,50),random(-50,50)));
+    } //if
+
     curr = floor(random(5));
   
-  temp = points[points.length-1];
+    temp = points[points.length-1];
   
   if (curr === 0) {
     //let c = color(255,0,0);
