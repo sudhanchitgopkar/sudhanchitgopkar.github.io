@@ -1,13 +1,14 @@
 * {
-    background-color: rgba(0, 0, 0, 0);;
+    background-color: #1111;
 }
 body {
-    background-color: rgba(0, 0, 0, 0);
-    font-family: 'Roboto Mono', monospace;
+    background-color: #1111;
+    font-family: 'Inter', sans-serif;
 }
 
 h1 {
     font-size: 1.32em;
+    font-weight: normal;
     line-height: 2.5vh;
     color: white;
 }

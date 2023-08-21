@@ -1,33 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sudhan Chitgopkar</title>
-    <link rel="icon" href="./favicon.ico" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">  
-    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
-    <script src="https://kit.fontawesome.com/33dfe074ae.js" crossorigin="anonymous"></script>
-    <script src="sketch.js"></script>
-    <link rel="stylesheet" href="./style.css">
-  </head>
-
-  <body>
-      <div id="sketchDiv"></div>
-      <div id="txt">
-        <h1>Sudhan Chitgopkar</h1>
-        <p> <a href = "resume.pdf" target="_blank">Resume</a> • <a href = "mailto:hi@sudhan.dev" target="_blank">hi@sudhan.dev</a></p>
-        <p><a href = "https://www.instagram.com/not.sudhan/" target="_blank"><i class="fa-brands fa-instagram"></i></a> 
-          <a href="https://www.linkedin.com/in/sudhanchitgopkar/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="https://github.com/sudhanchitgopkar" target="_blank"><i class="fa-brands fa-github"></i></a> 
-          <a href="https://open.spotify.com/user/sudhan.chitgopkar?si=45665f6f7e154d0a" target="_blank"><i class="fa-brands fa-spotify"></i></a>
-        </p>
-      </div>
-  </body>
-
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Sudhan Chitgopkar</title>
+  <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
+  <script src="https://kit.fontawesome.com/33dfe074ae.js" crossorigin="anonymous"></script>
+  <script src="test.js"></script>
+  <link rel="stylesheet" href="./style.css">
+  <style>
+    .glowing-dot {
+      position: relative;
+      display: inline-block;
+      margin-right: 5px;
+    }
+    .glowing-dot::before {
+      content: "";
+      display: block;
+      width: 7px;
+      height: 7px;
+      background-color: #00ff00;
+      border-radius: 50%;
+      animation: glowing 2s infinite;
+    }
+    @keyframes glowing {
+      0% {
+        box-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 20px #00ff00;
+      }
+      50% {
+        box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+      }
+      100% {
+        box-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 0px #00ff00;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="sketchDiv"></div>
+  <div id="txt">
+    <h1>
+      Sudhan Chitgopkar
+    </h1>
+    <p>  <span class="glowing-dot"></span>Open to work •  <a href="resume.pdf" target="_blank">Resume</a></p>
+    <p>
+      <a href="https://www.instagram.com/not.sudhan/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/sudhanchitgopkar/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://github.com/sudhanchitgopkar" target="_blank"><i class="fa-brands fa-github"></i></a>
+      <a href="https://open.spotify.com/user/sudhan.chitgopkar?si=45665f6f7e154d0a" target="_blank"><i class="fa-brands fa-spotify"></i></a>
+      <a href="mailto:hi@sudhan.dev" target="_blank"><i class="fa-regular fa-envelope"></i></a>
+    </p>
+  </div>
+</body>
 </html>
