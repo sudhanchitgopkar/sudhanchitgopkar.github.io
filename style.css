@@ -30,6 +30,10 @@ a:hover {
     color: #cdcdcd;
 }
 
+a:visited {
+  text-decoration: none;
+}
+
 #txt {
     position: absolute;
     bottom: 7vh;
