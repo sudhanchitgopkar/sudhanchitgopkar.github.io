@@ -1,17 +1,23 @@
-let gridStep = 100;
+let colorPicker;
+let gridStep = 50;
 let c = true;
 let etch;
+let hud;
 let curr;
 let step;
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
+    colorPicker = createColorPicker('#ff6d6d');
+    colorPicker.position(width - 50, height - 30);
 
     etch = createGraphics(windowWidth, windowHeight);
     etch.stroke(255,0,0);
 
+    hud = createGraphics(windowWidth, windowHeight);
+
     curr = createVector(0,0);
-    step = 10;
+    step = 5;
 
     noFill();
     drawGrid();
@@ -19,13 +25,17 @@ function setup() {
 
 function draw() {
     if (keyIsPressed) {
+        colorPicker.hide();
+        etch.stroke(colorPicker.color());
         if (c) {
             next = etchC()
-            etch.push();
-            etch.translate(width/2, height/2);
-            etch.line(curr.x, curr.y, next.x, next.y);
-            etch.pop();
-            curr = next;
+            if (!OOB(next)) {
+                etch.push();
+                etch.translate(width/2, height/2);
+                etch.line(curr.x, curr.y, next.x, next.y);
+                etch.pop();
+                curr = next;
+            } //if
         } else {
             next = etchP();
             nextC = pToC(next);
@@ -37,6 +47,17 @@ function draw() {
             curr = next;
         } //if
     } //if
+    
+    /*
+    hud.fill(100);
+    hud.clear();
+    let info = "System: " + (c ? "Cartesian " : "Polar ");
+    info += c ? ("x: " + curr.x + " y: " + curr.y) : ("r: " + curr.x + " θ: " + curr.y);
+    hud.text(info, 10, height - 20);
+
+    image(hud, 0,0);
+    */
+
     image(etch, 0,0);
 } //draw
 
@@ -101,6 +122,7 @@ function pToC(pol) {
 
 function drawGrid() {
     push();
+    noFill();
     translate(width/2, height/2);
     stroke(40);
     if (c) {
@@ -137,5 +159,12 @@ function keyReleased() {
         drawGrid();
     } else if (key === 'n') {
         setup();
+    } else if (key === 'h') {
+        colorPicker.show();
     } //if
 } //keyReleased
+
+function OOB(vec) {
+    //for vec as cartesian
+    return vec.x < -width/2 || vec.x > width/2 || vec.y < -height/2 || vec.y > height/2;
+}
