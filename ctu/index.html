@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code the Universe</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index: -1;
+        }
+
+        #text-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+        }
+
+        h1 {
+            font-size: 3em;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        p {
+            font-size: 1.2em;
+            font-weight: lighter;
+            margin: 0;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div id="text-container">
+        <h1>Code the Universe</h1>
+        <p>January@HarvardGriffinGSAS</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 200
+                },
+                color: {
+                    value: '#ffffff'
+                },
+                shape: {
+                    type: 'circle',
+                },
+                opacity: {
+                    value: 0.8,
+                    random: true
+                },
+                size: {
+                    value: 2,
+                    random: true
+                },
+                move: {
+                    enable: true,
+                    speed: 1,
+                    direction: 'top',
+                    random: true,
+                    straight: false,
+                    out_mode: 'out',
+                }
+            },
+            interactivity: {
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: 'repulse',
+                    }
+                },
+                modes: {
+                    repulse: {
+                        distance: 72
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
