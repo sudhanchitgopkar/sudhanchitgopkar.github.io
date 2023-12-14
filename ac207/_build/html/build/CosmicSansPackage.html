@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CosmicSansPackage package &mdash; CosmicSansPackage 2023 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/documentation_options.js?v=a4664895"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            CosmicSansPackage
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">CosmicSansPackage package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-CosmicSansPackage.cross_matching">CosmicSansPackage.cross_matching module</a><ul>
+<li><a class="reference internal" href="#CosmicSansPackage.cross_matching.CrossMatchDBHandler"><code class="docutils literal notranslate"><span class="pre">CrossMatchDBHandler</span></code></a><ul>
+<li><a class="reference internal" href="#CosmicSansPackage.cross_matching.CrossMatchDBHandler.parse"><code class="docutils literal notranslate"><span class="pre">CrossMatchDBHandler.parse()</span></code></a></li>
+<li><a class="reference internal" href="#CosmicSansPackage.cross_matching.CrossMatchDBHandler.query_gaia"><code class="docutils literal notranslate"><span class="pre">CrossMatchDBHandler.query_gaia()</span></code></a></li>
+<li><a class="reference internal" href="#CosmicSansPackage.cross_matching.CrossMatchDBHandler.query_panstarrs"><code class="docutils literal notranslate"><span class="pre">CrossMatchDBHandler.query_panstarrs()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#CosmicSansPackage.cross_matching.CrossReference"><code class="docutils literal notranslate"><span class="pre">CrossReference</span></code></a><ul>
+<li><a class="reference internal" href="#CosmicSansPackage.cross_matching.CrossReference.calculate_purity"><code class="docutils literal notranslate"><span class="pre">CrossReference.calculate_purity()</span></code></a></li>
+<li><a class="reference internal" href="#CosmicSansPackage.cross_matching.CrossReference.cross_reference"><code class="docutils literal notranslate"><span class="pre">CrossReference.cross_reference()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-CosmicSansPackage.data_augmentation">CosmicSansPackage.data_augmentation module</a><ul>
+<li><a class="reference internal" href="#CosmicSansPackage.data_augmentation.DataAugmentation"><code class="docutils literal notranslate"><span class="pre">DataAugmentation</span></code></a><ul>
+<li><a class="reference internal" href="#CosmicSansPackage.data_augmentation.DataAugmentation.take_derivative"><code class="docutils literal notranslate"><span class="pre">DataAugmentation.take_derivative()</span></code></a></li>
+<li><a class="reference internal" href="#CosmicSansPackage.data_augmentation.DataAugmentation.take_fractional_derivative"><code class="docutils literal notranslate"><span class="pre">DataAugmentation.take_fractional_derivative()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-CosmicSansPackage.db_handler">CosmicSansPackage.db_handler module</a><ul>
+<li><a class="reference internal" href="#CosmicSansPackage.db_handler.CustomDataHandler"><code class="docutils literal notranslate"><span class="pre">CustomDataHandler</span></code></a><ul>
+<li><a class="reference internal" href="#CosmicSansPackage.db_handler.CustomDataHandler.parse"><code class="docutils literal notranslate"><span class="pre">CustomDataHandler.parse()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#CosmicSansPackage.db_handler.SDSSHandler"><code class="docutils literal notranslate"><span class="pre">SDSSHandler</span></code></a><ul>
+<li><a class="reference internal" href="#CosmicSansPackage.db_handler.SDSSHandler.query_constraints"><code class="docutils literal notranslate"><span class="pre">SDSSHandler.query_constraints()</span></code></a></li>
+<li><a class="reference internal" href="#CosmicSansPackage.db_handler.SDSSHandler.query_sql"><code class="docutils literal notranslate"><span class="pre">SDSSHandler.query_sql()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-CosmicSansPackage.interactive_visualizer">CosmicSansPackage.interactive_visualizer module</a><ul>
+<li><a class="reference internal" href="#CosmicSansPackage.interactive_visualizer.InteractiveVisualizer"><code class="docutils literal notranslate"><span class="pre">InteractiveVisualizer</span></code></a><ul>
+<li><a class="reference internal" href="#CosmicSansPackage.interactive_visualizer.InteractiveVisualizer.create_visualization"><code class="docutils literal notranslate"><span class="pre">InteractiveVisualizer.create_visualization()</span></code></a></li>
+<li><a class="reference internal" href="#CosmicSansPackage.interactive_visualizer.InteractiveVisualizer.get_databounds"><code class="docutils literal notranslate"><span class="pre">InteractiveVisualizer.get_databounds()</span></code></a></li>
+<li><a class="reference internal" href="#CosmicSansPackage.interactive_visualizer.InteractiveVisualizer.get_flux_integral"><code class="docutils literal notranslate"><span class="pre">InteractiveVisualizer.get_flux_integral()</span></code></a></li>
+<li><a class="reference internal" href="#CosmicSansPackage.interactive_visualizer.InteractiveVisualizer.on_xlims_change"><code class="docutils literal notranslate"><span class="pre">InteractiveVisualizer.on_xlims_change()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-CosmicSansPackage.meta_extraction">CosmicSansPackage.meta_extraction module</a><ul>
+<li><a class="reference internal" href="#CosmicSansPackage.meta_extraction.MetaExtractor"><code class="docutils literal notranslate"><span class="pre">MetaExtractor</span></code></a><ul>
+<li><a class="reference internal" href="#CosmicSansPackage.meta_extraction.MetaExtractor.extract"><code class="docutils literal notranslate"><span class="pre">MetaExtractor.extract()</span></code></a></li>
+<li><a class="reference internal" href="#CosmicSansPackage.meta_extraction.MetaExtractor.get_equiv_widths"><code class="docutils literal notranslate"><span class="pre">MetaExtractor.get_equiv_widths()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-CosmicSansPackage.preprocessing">CosmicSansPackage.preprocessing module</a><ul>
+<li><a class="reference internal" href="#CosmicSansPackage.preprocessing.Preprocessor"><code class="docutils literal notranslate"><span class="pre">Preprocessor</span></code></a><ul>
+<li><a class="reference internal" href="#CosmicSansPackage.preprocessing.Preprocessor.align_spectrum"><code class="docutils literal notranslate"><span class="pre">Preprocessor.align_spectrum()</span></code></a></li>
+<li><a class="reference internal" href="#CosmicSansPackage.preprocessing.Preprocessor.build_continuum"><code class="docutils literal notranslate"><span class="pre">Preprocessor.build_continuum()</span></code></a></li>
+<li><a class="reference internal" href="#CosmicSansPackage.preprocessing.Preprocessor.correct_redshift"><code class="docutils literal notranslate"><span class="pre">Preprocessor.correct_redshift()</span></code></a></li>
+<li><a class="reference internal" href="#CosmicSansPackage.preprocessing.Preprocessor.interpolate"><code class="docutils literal notranslate"><span class="pre">Preprocessor.interpolate()</span></code></a></li>
+<li><a class="reference internal" href="#CosmicSansPackage.preprocessing.Preprocessor.load_spectrum"><code class="docutils literal notranslate"><span class="pre">Preprocessor.load_spectrum()</span></code></a></li>
+<li><a class="reference internal" href="#CosmicSansPackage.preprocessing.Preprocessor.normalize"><code class="docutils literal notranslate"><span class="pre">Preprocessor.normalize()</span></code></a></li>
+<li><a class="reference internal" href="#CosmicSansPackage.preprocessing.Preprocessor.remove_outlier"><code class="docutils literal notranslate"><span class="pre">Preprocessor.remove_outlier()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-CosmicSansPackage.visualizer">CosmicSansPackage.visualizer module</a><ul>
+<li><a class="reference internal" href="#CosmicSansPackage.visualizer.Visualizer"><code class="docutils literal notranslate"><span class="pre">Visualizer</span></code></a><ul>
+<li><a class="reference internal" href="#CosmicSansPackage.visualizer.Visualizer.add_continuum"><code class="docutils literal notranslate"><span class="pre">Visualizer.add_continuum()</span></code></a></li>
+<li><a class="reference internal" href="#CosmicSansPackage.visualizer.Visualizer.add_graph_settings"><code class="docutils literal notranslate"><span class="pre">Visualizer.add_graph_settings()</span></code></a></li>
+<li><a class="reference internal" href="#CosmicSansPackage.visualizer.Visualizer.add_spectrum"><code class="docutils literal notranslate"><span class="pre">Visualizer.add_spectrum()</span></code></a></li>
+<li><a class="reference internal" href="#CosmicSansPackage.visualizer.Visualizer.create_visualization"><code class="docutils literal notranslate"><span class="pre">Visualizer.create_visualization()</span></code></a></li>
+<li><a class="reference internal" href="#CosmicSansPackage.visualizer.Visualizer.validate_graph_settings"><code class="docutils literal notranslate"><span class="pre">Visualizer.validate_graph_settings()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-CosmicSansPackage">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CosmicSansPackage</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">CosmicSansPackage package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/build/CosmicSansPackage.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="cosmicsanspackage-package">
+<h1>CosmicSansPackage package<a class="headerlink" href="#cosmicsanspackage-package" title="Link to this heading">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-CosmicSansPackage.cross_matching">
+<span id="cosmicsanspackage-cross-matching-module"></span><h2>CosmicSansPackage.cross_matching module<a class="headerlink" href="#module-CosmicSansPackage.cross_matching" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="CosmicSansPackage.cross_matching.CrossMatchDBHandler">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">CosmicSansPackage.cross_matching.</span></span><span class="sig-name descname"><span class="pre">CrossMatchDBHandler</span></span><a class="headerlink" href="#CosmicSansPackage.cross_matching.CrossMatchDBHandler" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Accesses data from either the Gaia or Pan-STARRS database.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="CosmicSansPackage.cross_matching.CrossMatchDBHandler.parse">
+<span class="sig-name descname"><span class="pre">parse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_input</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CosmicSansPackage.cross_matching.CrossMatchDBHandler.parse" title="Link to this definition">¶</a></dt>
+<dd><p>Parses user input for a cross-matching database query. This function performs the corresponding query, but the user can call the query functions individually.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>user_input</strong> (<em>dict</em>) – A dictionary containing user-specified parameters for the cross-matching.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A DataFrame containing the query results.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>TypeError</strong> – If the user_input is not a dictionary.</p></li>
+<li><p><strong>ValueError</strong> – If the input values are invalid or not supported.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CosmicSansPackage.cross_matching.CrossMatchDBHandler.query_gaia">
+<span class="sig-name descname"><span class="pre">query_gaia</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ra</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_radius</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#CosmicSansPackage.cross_matching.CrossMatchDBHandler.query_gaia" title="Link to this definition">¶</a></dt>
+<dd><p>Queries the Gaia database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ra</strong> (<em>float</em>) – The right ascension for the query.</p></li>
+<li><p><strong>dec</strong> (<em>float</em>) – The declination for the query.</p></li>
+<li><p><strong>search_radius</strong> (<em>float</em>) – The radius within which to search.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The query results as a Pandas DataFrame.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CosmicSansPackage.cross_matching.CrossMatchDBHandler.query_panstarrs">
+<span class="sig-name descname"><span class="pre">query_panstarrs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ra</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#CosmicSansPackage.cross_matching.CrossMatchDBHandler.query_panstarrs" title="Link to this definition">¶</a></dt>
+<dd><p>Queries the Pan-STARRS database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ra</strong> (<em>float</em>) – The right ascension for the query.</p></li>
+<li><p><strong>dec</strong> (<em>float</em>) – The declination for the query.</p></li>
+<li><p><strong>search_radius</strong> (<em>float</em>) – The radius within which to search.</p></li>
+<li><p><strong>columns</strong> (<em>list</em><em>, </em><em>optional</em>) – The list of columns to retrieve. Defaults to all columns.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The query results as a Pandas DataFrame.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>Exception</strong> – If the query to Pan-STARRS database fails or the data cannot be parsed.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="CosmicSansPackage.cross_matching.CrossReference">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">CosmicSansPackage.cross_matching.</span></span><span class="sig-name descname"><span class="pre">CrossReference</span></span><a class="headerlink" href="#CosmicSansPackage.cross_matching.CrossReference" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Cross references data between two tables</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="CosmicSansPackage.cross_matching.CrossReference.calculate_purity">
+<span class="sig-name descname"><span class="pre">calculate_purity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">matches</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CosmicSansPackage.cross_matching.CrossReference.calculate_purity" title="Link to this definition">¶</a></dt>
+<dd><p>Calculates the purity of the cross-referenced matches based on the similarity score. The similarity score is defined as 1/(1+x) where x is the on-sky separation (in degrees) between the objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>matches</strong> (<em>pd.DataFrame</em>) – The DataFrame containing matched rows with a ‘similarity_score’ column.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An estimated purity score of the matches, represented as the average of the similarity scores.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CosmicSansPackage.cross_matching.CrossReference.cross_reference">
+<span class="sig-name descname"><span class="pre">cross_reference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_separation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CosmicSansPackage.cross_matching.CrossReference.cross_reference" title="Link to this definition">¶</a></dt>
+<dd><p>Cross-references data between two tables based on spatial proximity. The similarity score for calculating purity is saved as an extra column in the matched dataframe.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>table1</strong> (<em>pd.DataFrame</em>) – The first table to cross-reference.</p></li>
+<li><p><strong>table2</strong> (<em>pd.DataFrame</em>) – The second table to cross-reference.</p></li>
+<li><p><strong>max_separation</strong> (<em>float</em>) – The maximum separation distance for considering a match.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Two DataFrames containing the matching rows from table1 and table2.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-CosmicSansPackage.data_augmentation">
+<span id="cosmicsanspackage-data-augmentation-module"></span><h2>CosmicSansPackage.data_augmentation module<a class="headerlink" href="#module-CosmicSansPackage.data_augmentation" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="CosmicSansPackage.data_augmentation.DataAugmentation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">CosmicSansPackage.data_augmentation.</span></span><span class="sig-name descname"><span class="pre">DataAugmentation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CosmicSansPackage.data_augmentation.DataAugmentation" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class for taking integral and fractional derivatives on SDSS data.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="CosmicSansPackage.data_augmentation.DataAugmentation.take_derivative">
+<span class="sig-name descname"><span class="pre">take_derivative</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#CosmicSansPackage.data_augmentation.DataAugmentation.take_derivative" title="Link to this definition">¶</a></dt>
+<dd><p>Take integral derivative of given order on SDSS dataframe.</p>
+<p>Takes derivatives of integer order of flux with respect to wavelength at each wavelength in dataframe,
+updates dataframe with added column containing derivatives, and returns updated dataframe.</p>
+<p>Column names follow pattern “d*order*FdW*order*” (i.e. “d2FdW2”, “d3FdW3”) except when order is 1, then column name is “dFdW”.</p>
+<p>Orders greater than 1 will also append columns for orders 1:<em>order</em>. (i.e. a call take_derivative(2) will create columns
+“d2FdW2” and “dFdW”.)</p>
+<p>Derivatives are computed using an average finite difference formula:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>order</strong> (<em>int</em>) – integral derivative order</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>database with integral derivative column appended</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – if order is not an integer or is negative</p></li>
+<li><p><strong>TypeError</strong> – if order is not an integer</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CosmicSansPackage.data_augmentation.DataAugmentation.take_fractional_derivative">
+<span class="sig-name descname"><span class="pre">take_fractional_derivative</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#CosmicSansPackage.data_augmentation.DataAugmentation.take_fractional_derivative" title="Link to this definition">¶</a></dt>
+<dd><p>Take fractional derivative of given order on SDSS dataframe.</p>
+<p>Takes derivatives of fractional order of flux with respect to wavelength at each wavelength in dataframe,
+updates dataframe with added column containing derivatives, and
+returns updated dataframe.</p>
+<p>Column names follow pattern “d{<em>order</em>}FdW{<em>order</em>}” (i.e. a call to take_fractional_derivative(1/2) will create
+column “d1/2FdW1/2”</p>
+<p>This module uses Python differint package to compute pointwise Grünwald-Letnikov fractional derivatives.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>order</strong> (<em>float</em>) – fractional derivative order</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>database with fractional derivative column appended</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – if order is not a float or is negative</p></li>
+<li><p><strong>TypeError</strong> – if order is not a float</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-CosmicSansPackage.db_handler">
+<span id="cosmicsanspackage-db-handler-module"></span><h2>CosmicSansPackage.db_handler module<a class="headerlink" href="#module-CosmicSansPackage.db_handler" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="CosmicSansPackage.db_handler.CustomDataHandler">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">CosmicSansPackage.db_handler.</span></span><span class="sig-name descname"><span class="pre">CustomDataHandler</span></span><a class="headerlink" href="#CosmicSansPackage.db_handler.CustomDataHandler" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class for handling custom data exported from SDSS, in csv format.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="CosmicSansPackage.db_handler.CustomDataHandler.parse">
+<span class="sig-name descname"><span class="pre">parse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#CosmicSansPackage.db_handler.CustomDataHandler.parse" title="Link to this definition">¶</a></dt>
+<dd><p>Parses a CSV file and returns a pandas DataFrame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>) – input file name</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>pandas DataFrame</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>TypeError</strong> – if filename is not a <code class="docutils literal notranslate"><span class="pre">str</span></code></p></li>
+<li><p><strong>ValueError</strong> – if filename is not a valid file</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="CosmicSansPackage.db_handler.SDSSHandler">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">CosmicSansPackage.db_handler.</span></span><span class="sig-name descname"><span class="pre">SDSSHandler</span></span><a class="headerlink" href="#CosmicSansPackage.db_handler.SDSSHandler" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class for handling SDSS queries.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="CosmicSansPackage.db_handler.SDSSHandler.query_constraints">
+<span class="sig-name descname"><span class="pre">query_constraints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">objID</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#CosmicSansPackage.db_handler.SDSSHandler.query_constraints" title="Link to this definition">¶</a></dt>
+<dd><p>Queries the SDSS database with constraints and returns a pandas DataFrame.</p>
+<p>Queries the SDSS database with constraints and returns a pandas DataFrame.
+If <code class="docutils literal notranslate"><span class="pre">objID</span></code> is True, the query will include <code class="docutils literal notranslate"><span class="pre">objID</span></code> in the output, regardless of whether it is
+present in the user-input constraints. If <code class="docutils literal notranslate"><span class="pre">objID</span></code> is False, it will not necessarily be removed if it is
+present in the user-input constraints.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>table</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>) – table name</p></li>
+<li><p><strong>columns</strong> (<code class="docutils literal notranslate"><span class="pre">List[str]</span></code>) – list of columns to return</p></li>
+<li><p><strong>top</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>, optional) – number of rows to return, defaults to 0</p></li>
+<li><p><strong>objID</strong> (<code class="docutils literal notranslate"><span class="pre">bool</span></code>, optional) – whether to include objID in the query, defaults to True</p></li>
+<li><p><strong>kwargs</strong> (<code class="docutils literal notranslate"><span class="pre">dict</span></code>) – constraints</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>pandas DataFrame</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>TypeError</strong> – if table is not a <code class="docutils literal notranslate"><span class="pre">str</span></code>, columns is not a list, <code class="docutils literal notranslate"><span class="pre">top</span></code> is not an int, or <code class="docutils literal notranslate"><span class="pre">objID</span></code> is not a bool</p></li>
+<li><p><strong>ValueError</strong> – if <code class="docutils literal notranslate"><span class="pre">top</span></code> is negative or if constraints are invalid</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CosmicSansPackage.db_handler.SDSSHandler.query_sql">
+<span class="sig-name descname"><span class="pre">query_sql</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">objID</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#CosmicSansPackage.db_handler.SDSSHandler.query_sql" title="Link to this definition">¶</a></dt>
+<dd><p>Queries the SDSS DR18 database and returns a pandas DataFrame.</p>
+<p>Queries the SDSS database with a user-input SQL query and returns a pandas DataFrame.
+If <code class="docutils literal notranslate"><span class="pre">objID</span></code> is True, the query will include <code class="docutils literal notranslate"><span class="pre">objID</span></code> in the output, regardless of whether it is
+present in the original string. If <code class="docutils literal notranslate"><span class="pre">objID</span></code> is False, it will not necessarily be removed if it is
+present in the original query.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>query</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>) – SQL query</p></li>
+<li><p><strong>objID</strong> (<code class="docutils literal notranslate"><span class="pre">bool</span></code>, optional) – whether to include <code class="docutils literal notranslate"><span class="pre">objID</span></code> in the query, defaults to True</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>pandas DataFrame</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>TypeError</strong> – if <code class="docutils literal notranslate"><span class="pre">query</span></code> is not a str or <code class="docutils literal notranslate"><span class="pre">objID</span></code> is not a bool</p></li>
+<li><p><strong>ValueError</strong> – if <code class="docutils literal notranslate"><span class="pre">query</span></code> is empty or invalid</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-CosmicSansPackage.interactive_visualizer">
+<span id="cosmicsanspackage-interactive-visualizer-module"></span><h2>CosmicSansPackage.interactive_visualizer module<a class="headerlink" href="#module-CosmicSansPackage.interactive_visualizer" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="CosmicSansPackage.interactive_visualizer.InteractiveVisualizer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">CosmicSansPackage.interactive_visualizer.</span></span><span class="sig-name descname"><span class="pre">InteractiveVisualizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spectrum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">continuum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CosmicSansPackage.interactive_visualizer.InteractiveVisualizer" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#CosmicSansPackage.visualizer.Visualizer" title="CosmicSansPackage.visualizer.Visualizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Visualizer</span></code></a></p>
+<p>Interactive Visualizer, child class of Visualizer. Adds functionality
+to see the integrated flux of a selected region on a matplotlib interactive
+figure.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="CosmicSansPackage.interactive_visualizer.InteractiveVisualizer.create_visualization">
+<span class="sig-name descname"><span class="pre">create_visualization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#CosmicSansPackage.interactive_visualizer.InteractiveVisualizer.create_visualization" title="Link to this definition">¶</a></dt>
+<dd><p>Use currently loaded spectrum and continuum data to make a figure.</p>
+<p>Assumes that data to plot has already been pre-processed and all other pre-graphing
+operations have been completed. Users can save the visualization is they pass in a
+path name string to save to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path_name</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>) – Path to save the figure to, if None, then do not save</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>Exception</strong> – is there is no spectrum or continuum data to plot.</p></li>
+<li><p><strong>AssertionError</strong> – if the path name is not a <code class="docutils literal notranslate"><span class="pre">str</span></code></p></li>
+<li><p><strong>RuntimeError</strong> – if spectrum or continuum data has become corrupted (e.g. non-numeric) before plotting.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+<dt class="field-even">Rytpe<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">NoneType</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CosmicSansPackage.interactive_visualizer.InteractiveVisualizer.get_databounds">
+<span class="sig-name descname"><span class="pre">get_databounds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_lower</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_upper</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_lower</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_upper</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CosmicSansPackage.interactive_visualizer.InteractiveVisualizer.get_databounds" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CosmicSansPackage.interactive_visualizer.InteractiveVisualizer.get_flux_integral">
+<span class="sig-name descname"><span class="pre">get_flux_integral</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CosmicSansPackage.interactive_visualizer.InteractiveVisualizer.get_flux_integral" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CosmicSansPackage.interactive_visualizer.InteractiveVisualizer.on_xlims_change">
+<span class="sig-name descname"><span class="pre">on_xlims_change</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event_ax</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CosmicSansPackage.interactive_visualizer.InteractiveVisualizer.on_xlims_change" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-CosmicSansPackage.meta_extraction">
+<span id="cosmicsanspackage-meta-extraction-module"></span><h2>CosmicSansPackage.meta_extraction module<a class="headerlink" href="#module-CosmicSansPackage.meta_extraction" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="CosmicSansPackage.meta_extraction.MetaExtractor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">CosmicSansPackage.meta_extraction.</span></span><span class="sig-name descname"><span class="pre">MetaExtractor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spec_obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Series</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">equiv_widths</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CosmicSansPackage.meta_extraction.MetaExtractor" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class for extracting metadata from input/SDSS data.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="CosmicSansPackage.meta_extraction.MetaExtractor.extract">
+<span class="sig-name descname"><span class="pre">extract</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CosmicSansPackage.meta_extraction.MetaExtractor.extract" title="Link to this definition">¶</a></dt>
+<dd><p>Extracts user provided metadata from the <code class="docutils literal notranslate"><span class="pre">spec_obj</span></code> params.</p>
+<p>Given some user-defined parameter in <code class="docutils literal notranslate"><span class="pre">spec_obj</span></code>, this function will extract the value at that parameter and return it as a <code class="docutils literal notranslate"><span class="pre">list</span></code>.
+The list will consist of the <code class="docutils literal notranslate"><span class="pre">spec_obj</span></code>’s class as the first index, followed by the extracted value.
+An <code class="docutils literal notranslate"><span class="pre">Exception</span></code> will be raised if the <code class="docutils literal notranslate"><span class="pre">db</span></code> or <code class="docutils literal notranslate"><span class="pre">spec_obj</span></code> has not been initialized, while a <code class="docutils literal notranslate"><span class="pre">KeyError</span></code> will be raised if the <code class="docutils literal notranslate"><span class="pre">spec_obj</span></code> has no <code class="docutils literal notranslate"><span class="pre">class</span></code> attribute or does not contain the <code class="docutils literal notranslate"><span class="pre">param</span></code> requested. Finally, a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> will be raised if <code class="docutils literal notranslate"><span class="pre">param</span></code> is not an <code class="docutils literal notranslate"><span class="pre">str</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>param</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>) – metadata to be extracted</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">list</span></code> &lt;class, metadata requested&gt;</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">list</span></code></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>Exception</strong> – if no database or spec_obj is found</p></li>
+<li><p><strong>TypeError</strong> – if <code class="docutils literal notranslate"><span class="pre">param</span></code> is not a string</p></li>
+<li><p><strong>KeyError</strong> – if <code class="docutils literal notranslate"><span class="pre">param</span></code> is not in spec_obj</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CosmicSansPackage.meta_extraction.MetaExtractor.get_equiv_widths">
+<span class="sig-name descname"><span class="pre">get_equiv_widths</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CosmicSansPackage.meta_extraction.MetaExtractor.get_equiv_widths" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the equivalent widths of each line.</p>
+<p>When called this function returns a <code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code> with each row consisting of a line <code class="docutils literal notranslate"><span class="pre">[line</span> <span class="pre">name,</span> <span class="pre">wavelength,</span> <span class="pre">equivalent</span> <span class="pre">width]</span></code>.
+If the <code class="docutils literal notranslate"><span class="pre">equiv_widths</span></code> attribute has not been initialized, an <code class="docutils literal notranslate"><span class="pre">Exception</span></code> is thrown.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>a <code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code> with each line name, wavelength, and equivalent width</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code></p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Exception</strong> – if no equivalent widths are found</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-CosmicSansPackage.preprocessing">
+<span id="cosmicsanspackage-preprocessing-module"></span><h2>CosmicSansPackage.preprocessing module<a class="headerlink" href="#module-CosmicSansPackage.preprocessing" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="CosmicSansPackage.preprocessing.Preprocessor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">CosmicSansPackage.preprocessing.</span></span><span class="sig-name descname"><span class="pre">Preprocessor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spec_obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Series</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spectrum</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">emission</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">continuum</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">equivalent_width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CosmicSansPackage.preprocessing.Preprocessor" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class for preprocessing SDSS data.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="CosmicSansPackage.preprocessing.Preprocessor.align_spectrum">
+<span class="sig-name descname"><span class="pre">align_spectrum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wavelengths</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">continuum</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#CosmicSansPackage.preprocessing.Preprocessor.align_spectrum" title="Link to this definition">¶</a></dt>
+<dd><p>Calculate and return the flux for each wavelength in wavelengths.</p>
+<p>Calculate and return the flux from either <code class="docutils literal notranslate"><span class="pre">self.spectrum</span></code> or <code class="docutils literal notranslate"><span class="pre">self.continuum</span></code> for each wavelength in wavelengths.
+Raises error if any wavelength is not in the range of the spectrum.
+If <code class="docutils literal notranslate"><span class="pre">self.continuum</span></code> is None, <code class="docutils literal notranslate"><span class="pre">self.spectrum</span></code> is used instead.
+If <code class="docutils literal notranslate"><span class="pre">continuum</span></code> is False, <code class="docutils literal notranslate"><span class="pre">self.spectrum</span></code> is used instead.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>wavelengths</strong> (<code class="docutils literal notranslate"><span class="pre">List[float]</span> <span class="pre">|</span> <span class="pre">np.array[np.number]</span></code>) – 1D array of wavelengths to calculate flux for</p></li>
+<li><p><strong>continuum</strong> (<code class="docutils literal notranslate"><span class="pre">bool</span></code>) – whether to use <code class="docutils literal notranslate"><span class="pre">self.continuum</span></code> or <code class="docutils literal notranslate"><span class="pre">self.spectrum</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>fluxes for each wavelength</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">np.array</span></code></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>TypeError</strong> – if argument is of the wrong type</p></li>
+<li><p><strong>ValueError</strong> – if wavelengths are not in the range of the spectrum</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CosmicSansPackage.preprocessing.Preprocessor.build_continuum">
+<span class="sig-name descname"><span class="pre">build_continuum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">window</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#CosmicSansPackage.preprocessing.Preprocessor.build_continuum" title="Link to this definition">¶</a></dt>
+<dd><p>Infer the continuum of a spectrum.</p>
+<p>Infer the continuum of a spectrum using a median filter with a sliding window of size window, an odd number.
+The continuum is stored in the continuum attribute.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>window</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>) – size of sliding window for median filter</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>continuum dataframe</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>TypeError</strong> – if <code class="docutils literal notranslate"><span class="pre">window</span></code> is not an int</p></li>
+<li><p><strong>ValueError</strong> – if <code class="docutils literal notranslate"><span class="pre">window</span></code> is not positive or is even or if <code class="docutils literal notranslate"><span class="pre">spectrum</span></code> does not exist</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CosmicSansPackage.preprocessing.Preprocessor.correct_redshift">
+<span class="sig-name descname"><span class="pre">correct_redshift</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">number</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#CosmicSansPackage.preprocessing.Preprocessor.correct_redshift" title="Link to this definition">¶</a></dt>
+<dd><p>Correct for redshift in the spectrum or continuum.</p>
+<p>Corrects for redshift in the spectrum and continuum using the formula l_final = l_obs/(1+z) where z is the redshift.
+By default, the z value from <code class="docutils literal notranslate"><span class="pre">self.spec_obj</span></code> is used, but can be specified instead
+Returns the corrected spectrum or continuum.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>z</strong> (<code class="docutils literal notranslate"><span class="pre">np.number</span></code>) – redshift to use for correction</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>corrected spectrum or continuum</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>TypeError</strong> – if <code class="docutils literal notranslate"><span class="pre">z</span></code> is not of the correct type</p></li>
+<li><p><strong>ValueError</strong> – if <code class="docutils literal notranslate"><span class="pre">z</span></code> is not a valid redshift</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CosmicSansPackage.preprocessing.Preprocessor.interpolate">
+<span class="sig-name descname"><span class="pre">interpolate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wavelength</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">continuum</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#CosmicSansPackage.preprocessing.Preprocessor.interpolate" title="Link to this definition">¶</a></dt>
+<dd><p>Interpolate the flux for a given wavelength.</p>
+<p>Interpolates <code class="docutils literal notranslate"><span class="pre">self.spectrum</span></code> or <code class="docutils literal notranslate"><span class="pre">self.continuum</span></code> attribute to find the flux at a given wavelength.
+Raises error if wavelength is not in the range of the spectrum.
+If <code class="docutils literal notranslate"><span class="pre">continuum</span></code> is None, <code class="docutils literal notranslate"><span class="pre">self.spectrum</span></code> is used instead.
+If <code class="docutils literal notranslate"><span class="pre">`continuum`</span></code> is False, <code class="docutils literal notranslate"><span class="pre">self.spectrum</span></code> is used instead.
+Returns the interpolated flux.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>wavelength</strong> (<code class="docutils literal notranslate"><span class="pre">np.number</span></code>) – wavelength to interpolate</p></li>
+<li><p><strong>continuum</strong> (<code class="docutils literal notranslate"><span class="pre">bool</span></code>) – whether to use self.continuum or self.spectrum</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>interpolated flux</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>TypeError</strong> – if <code class="docutils literal notranslate"><span class="pre">wavelength</span></code> or <code class="docutils literal notranslate"><span class="pre">continuum</span></code> are not of the correct type</p></li>
+<li><p><strong>ValueError</strong> – if <code class="docutils literal notranslate"><span class="pre">wavelength</span></code> is not in the range of the spectrum</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CosmicSansPackage.preprocessing.Preprocessor.load_spectrum">
+<span class="sig-name descname"><span class="pre">load_spectrum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CosmicSansPackage.preprocessing.Preprocessor.load_spectrum" title="Link to this definition">¶</a></dt>
+<dd><p>Load the <code class="docutils literal notranslate"><span class="pre">spec_obj</span></code> and <code class="docutils literal notranslate"><span class="pre">spectrum</span></code> dataframes from a given object id.</p>
+<p>With a given object id, load the <code class="docutils literal notranslate"><span class="pre">spec_obj</span></code>, <code class="docutils literal notranslate"><span class="pre">spectrum</span></code>, and <code class="docutils literal notranslate"><span class="pre">emission</span></code> dataframes from the SDSS database.
+<code class="docutils literal notranslate"><span class="pre">spec_obj</span></code> contains metadata about the object, while <code class="docutils literal notranslate"><span class="pre">spectrum</span></code> contains the actual spectrum data.
+<code class="docutils literal notranslate"><span class="pre">emission</span></code> contains the emission/absorption line data.
+The <code class="docutils literal notranslate"><span class="pre">spec_obj</span></code>, <code class="docutils literal notranslate"><span class="pre">spectrum</span></code>, and <code class="docutils literal notranslate"><span class="pre">emission</span></code> dataframes are stored in the <code class="docutils literal notranslate"><span class="pre">spec_obj</span></code>, <code class="docutils literal notranslate"><span class="pre">spectrum</span></code>, and <code class="docutils literal notranslate"><span class="pre">emission</span></code> attributes respectively.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj_id</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code> or <code class="docutils literal notranslate"><span class="pre">str</span></code>) – SDSS object id</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">spec_obj</span></code>, <code class="docutils literal notranslate"><span class="pre">spectrum</span></code>, and <code class="docutils literal notranslate"><span class="pre">emission</span></code> dataframes</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">Tuple[pd.Series,</span> <span class="pre">pd.DataFrame,</span> <span class="pre">pd.DataFrame]</span></code></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>TypeError</strong> – if <code class="docutils literal notranslate"><span class="pre">obj_id</span></code> is not an <code class="docutils literal notranslate"><span class="pre">int</span></code> or <code class="docutils literal notranslate"><span class="pre">str</span></code></p></li>
+<li><p><strong>ValueError</strong> – if <code class="docutils literal notranslate"><span class="pre">obj_id</span></code> is not found in the SDSS database</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CosmicSansPackage.preprocessing.Preprocessor.normalize">
+<span class="sig-name descname"><span class="pre">normalize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">columns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'spectrum'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#CosmicSansPackage.preprocessing.Preprocessor.normalize" title="Link to this definition">¶</a></dt>
+<dd><p>Normalize a dataframe on specified columns.</p>
+<p>Normalize a dataframe on specified columns. If no columns are specified, normalize all columns.
+Choose between <code class="docutils literal notranslate"><span class="pre">db</span></code>, <code class="docutils literal notranslate"><span class="pre">spec_obj</span></code>, <code class="docutils literal notranslate"><span class="pre">spectrum</span></code>, or <code class="docutils literal notranslate"><span class="pre">continuum</span></code> to normalize. Default is <code class="docutils literal notranslate"><span class="pre">spectrum</span></code>.
+Optionally, exclude certain columns from normalization.
+Performs normalization in place.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code>) – dataframe to normalize</p></li>
+<li><p><strong>columns</strong> (<code class="docutils literal notranslate"><span class="pre">List[str]</span></code>) – list of columns to normalize</p></li>
+<li><p><strong>db</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>) – database to normalize. Default is ‘spectrum’.</p></li>
+<li><p><strong>exclude</strong> (<code class="docutils literal notranslate"><span class="pre">List[str]</span></code>) – list of columns to exclude from normalization</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>normalized dataframe</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – if <code class="docutils literal notranslate"><span class="pre">db</span></code> is not a valid option, or does not exist</p></li>
+<li><p><strong>KeyError</strong> – if column is not in dataframe</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CosmicSansPackage.preprocessing.Preprocessor.remove_outlier">
+<span class="sig-name descname"><span class="pre">remove_outlier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">columns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dropna</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'spectrum'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#CosmicSansPackage.preprocessing.Preprocessor.remove_outlier" title="Link to this definition">¶</a></dt>
+<dd><p>Remove outliers from specified columns in a DataFrame.</p>
+<p>Identifies and replaces outliers with NaN in specified columns using the Z-score method.
+Outliers are values more than 3 standard deviations from the mean. Optionally, rows with NaNs post-removal can be dropped.
+Choose between <code class="docutils literal notranslate"><span class="pre">db</span></code>, <code class="docutils literal notranslate"><span class="pre">spec_obj</span></code>, <code class="docutils literal notranslate"><span class="pre">spectrum</span></code>, or <code class="docutils literal notranslate"><span class="pre">continuum</span></code> to remove outliers. Default is <code class="docutils literal notranslate"><span class="pre">spectrum</span></code>.
+Optionally, exclude certain columns from outlier removal.
+Performs outlier removal in place.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code>) – DataFrame from which to remove outliers.</p></li>
+<li><p><strong>columns</strong> (<code class="docutils literal notranslate"><span class="pre">List[str]</span></code>) – Columns to check for outliers. If empty, checks all columns.</p></li>
+<li><p><strong>dropna</strong> (<code class="docutils literal notranslate"><span class="pre">bool</span></code>) – If True, drops rows with NaNs after outlier removal. Default is False.</p></li>
+<li><p><strong>db</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>) – Database to remove outliers from. Default is ‘spectrum’.</p></li>
+<li><p><strong>exclude</strong> (<code class="docutils literal notranslate"><span class="pre">List[str]</span></code>) – Columns to exclude from outlier removal.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>DataFrame with outliers removed.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – if <code class="docutils literal notranslate"><span class="pre">db</span></code> is not a valid option, or does not exist</p></li>
+<li><p><strong>KeyError</strong> – if column is not in dataframe</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-CosmicSansPackage.visualizer">
+<span id="cosmicsanspackage-visualizer-module"></span><h2>CosmicSansPackage.visualizer module<a class="headerlink" href="#module-CosmicSansPackage.visualizer" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="CosmicSansPackage.visualizer.Visualizer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">CosmicSansPackage.visualizer.</span></span><span class="sig-name descname"><span class="pre">Visualizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spectrum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">continuum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CosmicSansPackage.visualizer.Visualizer" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class for a Vizualizer object, takes data and can create and save figures</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="CosmicSansPackage.visualizer.Visualizer.add_continuum">
+<span class="sig-name descname"><span class="pre">add_continuum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">continuum</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#CosmicSansPackage.visualizer.Visualizer.add_continuum" title="Link to this definition">¶</a></dt>
+<dd><p>Add inferred continuum data to a Visualizer instance.</p>
+<p>Adds a new continuum data if none is already present, and
+overrrides old data that is already present.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>continuum</strong> (<code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code>) – <ul class="simple">
+<li><p>the inferrred continuum data</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>TypeError</strong> – raises error if continuum is not a pandas dataframe</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+<dt class="field-even">Rytpe<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">NoneType</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CosmicSansPackage.visualizer.Visualizer.add_graph_settings">
+<span class="sig-name descname"><span class="pre">add_graph_settings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph_settings</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#CosmicSansPackage.visualizer.Visualizer.add_graph_settings" title="Link to this definition">¶</a></dt>
+<dd><p>Add graph settings for a visualizer.</p>
+<p>Add a new dictionary of information about the graph to be made, e.g.
+labels, title, colors, markers. An example of a valid graph setting
+is:</p>
+<dl class="simple">
+<dt>available_settings = {</dt><dd><p>“x_label” : None,
+“y_label” : None,
+“title” : None,
+“spec_color” : colors,
+“cont_color” : colors,
+“spec_marker” : markers,
+“cont_marker” : markers,
+“spec_linestyle” : line_styles,
+“cont_linestyle” : line_styles</p>
+</dd>
+</dl>
+<p>}</p>
+<p>Available parameters include ‘x_label’, ‘y_label’, ‘title’, ‘spec_color’,
+‘cont_color’, ‘spec_marker’, ‘cont_marker’, ‘spec_linestyle’, ‘cont_linestyle’.</p>
+<p>Labels must adhere to matplotlib standards, as must colors and marker types.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>graph_settings</strong> (<code class="docutils literal notranslate"><span class="pre">dict</span></code>) – A dictionary holding settings for the graph.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>AssertionErrror</strong> – if the graph settings are not a dictionary</p></li>
+<li><p><strong>AssertionError</strong> – if the graph settings are invalid.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+<dt class="field-even">Rytpe<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">NoneType</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CosmicSansPackage.visualizer.Visualizer.add_spectrum">
+<span class="sig-name descname"><span class="pre">add_spectrum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spectrum</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#CosmicSansPackage.visualizer.Visualizer.add_spectrum" title="Link to this definition">¶</a></dt>
+<dd><p>Adds spectrum data to a Visualizer instance.</p>
+<p>Add spectrum data if none is already present, and
+overrides old data is already present. Spectral data must be possessed
+by the object before any plotting can be done.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>spectrum</strong> (<code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code>) – spectral data to be used</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>TypeError</strong> – Will raise type error if the type is invalid.</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+<dt class="field-even">Rytpe<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">NoneType</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CosmicSansPackage.visualizer.Visualizer.create_visualization">
+<span class="sig-name descname"><span class="pre">create_visualization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#CosmicSansPackage.visualizer.Visualizer.create_visualization" title="Link to this definition">¶</a></dt>
+<dd><p>Use currently loaded spectrum and continuum data to make a figure.</p>
+<p>Assumes that data to plot has already been pre-processed and all other pre-graphing
+operations have been completed. Users can save the visualization is they pass in a
+path name string to save to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path_name</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>) – Path to save the figure to, if None, then do not save</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>Exception</strong> – is there is no spectrum or continuum data to plot.</p></li>
+<li><p><strong>AssertionError</strong> – if the path name is not a <code class="docutils literal notranslate"><span class="pre">str</span></code></p></li>
+<li><p><strong>RuntimeError</strong> – if spectrum or continuum data has become corrupted (e.g. non-numeric) before plotting.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+<dt class="field-even">Rytpe<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">NoneType</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CosmicSansPackage.visualizer.Visualizer.validate_graph_settings">
+<span class="sig-name descname"><span class="pre">validate_graph_settings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph_settings</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#CosmicSansPackage.visualizer.Visualizer.validate_graph_settings" title="Link to this definition">¶</a></dt>
+<dd><p>Validates a given dict of graph settings</p>
+<p>Each element of the settings dictionary must be valid to use.
+Colors, linestyles, and markerstyles must conform with matplotlib
+standard. Return true if yes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>graph_settings</strong> (<code class="docutils literal notranslate"><span class="pre">dict</span></code>) – dictionary of graph settings.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>Exception</strong> – if a key in the settings does not correspond to available settings. See <code class="docutils literal notranslate"><span class="pre">add_graph_settings</span></code></p></li>
+<li><p><strong>AssertionError</strong> – if given labels are not strings.</p></li>
+<li><p><strong>AssertionError</strong> – if linestyles or markerstyles are not available from <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>boolean whether valid</p>
+</dd>
+<dt class="field-even">Rytpe<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-CosmicSansPackage">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-CosmicSansPackage" title="Link to this heading">¶</a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Sudhan Chitgopkar, Noah Dohrmann, Jimmy Mendez, Stephanie Monson, Michael Zhan.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
