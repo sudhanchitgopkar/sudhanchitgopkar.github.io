@@ -1,0 +1,69 @@
+CosmicSansPackage package
+=========================
+
+Submodules
+----------
+
+CosmicSansPackage.cross\_matching module
+----------------------------------------
+
+.. automodule:: CosmicSansPackage.cross_matching
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+CosmicSansPackage.data\_augmentation module
+-------------------------------------------
+
+.. automodule:: CosmicSansPackage.data_augmentation
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+CosmicSansPackage.db\_handler module
+------------------------------------
+
+.. automodule:: CosmicSansPackage.db_handler
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+CosmicSansPackage.interactive\_visualizer module
+------------------------------------------------
+
+.. automodule:: CosmicSansPackage.interactive_visualizer
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+CosmicSansPackage.meta\_extraction module
+-----------------------------------------
+
+.. automodule:: CosmicSansPackage.meta_extraction
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+CosmicSansPackage.preprocessing module
+--------------------------------------
+
+.. automodule:: CosmicSansPackage.preprocessing
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+CosmicSansPackage.visualizer module
+-----------------------------------
+
+.. automodule:: CosmicSansPackage.visualizer
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: CosmicSansPackage
+   :members:
+   :undoc-members:
+   :show-inheritance:

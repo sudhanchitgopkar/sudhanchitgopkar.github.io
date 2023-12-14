@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduction &mdash; CosmicSansPackage 2023 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/documentation_options.js?v=a4664895"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            CosmicSansPackage
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#"><strong>Introduction</strong></a></li>
+<li><a class="reference internal" href="#installation"><strong>Installation</strong></a></li>
+<li><a class="reference internal" href="#modules"><strong>Modules</strong></a><ul>
+<li><a class="reference internal" href="#db-handler"><code class="docutils literal notranslate"><span class="pre">db_handler</span></code></a></li>
+<li><a class="reference internal" href="#data-augmentation"><code class="docutils literal notranslate"><span class="pre">data_augmentation</span></code></a></li>
+<li><a class="reference internal" href="#visualizer"><code class="docutils literal notranslate"><span class="pre">visualizer</span></code></a></li>
+<li><a class="reference internal" href="#interactive-visualizer"><code class="docutils literal notranslate"><span class="pre">interactive_visualizer</span></code></a></li>
+<li><a class="reference internal" href="#preprocessing"><code class="docutils literal notranslate"><span class="pre">preprocessing</span></code></a></li>
+<li><a class="reference internal" href="#cross-matching"><code class="docutils literal notranslate"><span class="pre">cross_matching</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">CosmicSansPackage</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><strong>Introduction</strong></li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="introduction">
+<h1><strong>Introduction</strong><a class="headerlink" href="#introduction" title="Link to this heading">¶</a></h1>
+<p>CosmicSans allows you to query, process, analyze, and visualize astronomical data from SDSS DR18 or your database of choice. The class has a variety of modules that assist you through all aspects of getting the astronomical data you need and analyzing it as you desire. Check out our installation guide below to get started, or get an overview of the modules in the package through the module overview! All source code is available under the GPLv3 and open source contributions to this library are welcome.</p>
+</section>
+<section id="installation">
+<h1><strong>Installation</strong><a class="headerlink" href="#installation" title="Link to this heading">¶</a></h1>
+<p>On MacOS, install <code class="docutils literal notranslate"><span class="pre">CosmicSansPackage</span></code> from the Test PyPi server using the following shell command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python3 -m pip install --index https://test.pypi.org/simple CosmicSansPackage --extra-index-url https://pypi.org/simple
+</pre></div>
+</div>
+<p>Similarly on Windows machines, you can run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ py -m pip install --index https://test.pypi.org/simple CosmicSansPackage --extra-index-url https://pypi.org/simple
+</pre></div>
+</div>
+<p>or you can view the Test PyPi homepage <a class="reference external" href="https://test.pypi.org/project/CosmicSansPackage">here</a> along with our GitHub repo <a class="reference external" href="https://code.harvard.edu/CS107/team08_2023">here</a> to view the source code.</p>
+</section>
+<section id="modules">
+<h1><strong>Modules</strong><a class="headerlink" href="#modules" title="Link to this heading">¶</a></h1>
+<section id="db-handler">
+<h2><code class="docutils literal notranslate"><span class="pre">db_handler</span></code><a class="headerlink" href="#db-handler" title="Link to this heading">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">db_handler</span></code> allows users to query astronomy data from one of two sources:</p>
+<ol class="arabic simple">
+<li><p>SDSS DR18</p></li>
+<li><p>a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file provided as input</p></li>
+</ol>
+<p>For queries made to SDSS DR18, users have the ability to use SQL/ADQL queries or use standard text input to specify the queries themselves. Note for this latter option, there are specific formatting expectations shown in the documentation for <code class="docutils literal notranslate"><span class="pre">query_constraints</span></code> in <code class="docutils literal notranslate"><span class="pre">CosmicSansPackage.db_handler.SDSSHandler</span></code>. This data can be used later for preprocessing, analysis, and visualization.</p>
+</section>
+<section id="data-augmentation">
+<h2><code class="docutils literal notranslate"><span class="pre">data_augmentation</span></code><a class="headerlink" href="#data-augmentation" title="Link to this heading">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">data_augmentation</span></code> provides functionality for calculating derivatives of flux with respect to wavelength given spectral data frames at every data point in the table. The derivatives are appended as a new column to the <code class="docutils literal notranslate"><span class="pre">spectrum</span></code> dataframe. The <code class="docutils literal notranslate"><span class="pre">take_derivative</span></code> function calculates integral derivatives (1st, 2nd, 3rd…), and the <code class="docutils literal notranslate"><span class="pre">take_fractional_derivative</span></code> function calculates GL fractional derivatives (e.g. 1/2, 1/3). These are useful in data analysis applications of astronomical data.</p>
+</section>
+<section id="visualizer">
+<h2><code class="docutils literal notranslate"><span class="pre">visualizer</span></code><a class="headerlink" href="#visualizer" title="Link to this heading">¶</a></h2>
+<p>This module allows the user to create visualizations of spectral and inferred continuum data. The user must have already loaded in spectral and continuum data to a <code class="docutils literal notranslate"><span class="pre">Visualizer</span></code> object in order to create a plot. Additionally, all preprocessing must be done to the data before it is passed to a <code class="docutils literal notranslate"><span class="pre">Visualizer</span></code>. Figures may be saved py passing a path name string to the object in <code class="docutils literal notranslate"><span class="pre">create_visualization(path_name)</span></code>.</p>
+</section>
+<section id="interactive-visualizer">
+<h2><code class="docutils literal notranslate"><span class="pre">interactive_visualizer</span></code><a class="headerlink" href="#interactive-visualizer" title="Link to this heading">¶</a></h2>
+<p>This module extends <code class="docutils literal notranslate"><span class="pre">Visualizer</span></code> and allows the user to interact with the plotted data through <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> windows. The numerically-calculated value of the flux is presented using the bounds of the data currently displayed on the screen, and updates in real time after zoom-ins and window drags.</p>
+</section>
+<section id="preprocessing">
+<h2><code class="docutils literal notranslate"><span class="pre">preprocessing</span></code><a class="headerlink" href="#preprocessing" title="Link to this heading">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">preprocessing</span></code> handles the proprocessing of data passed in by both the user and the information retrieved from <code class="docutils literal notranslate"><span class="pre">db_handler</span></code>. Specifically, <code class="docutils literal notranslate"><span class="pre">preprocessing</span></code> is able to load and align spectrum/spectra data, and then operate on this spectrum data. Amongst the valid operations include:</p>
+<ol class="arabic simple">
+<li><p>building the continuum of a spectrum</p></li>
+<li><p>interpolating the flux for some wavelength</p></li>
+<li><p>correcting the redshift of some spectrum or continuum</p></li>
+</ol>
+<p>Other operations for the data queried by the <code class="docutils literal notranslate"><span class="pre">db_handler</span></code>:</p>
+<ol class="arabic simple">
+<li><p>normalizing a dataframe on some specific columns</p></li>
+<li><p>removing outliers of a specific spectrum</p></li>
+</ol>
+</section>
+<section id="cross-matching">
+<h2><code class="docutils literal notranslate"><span class="pre">cross_matching</span></code><a class="headerlink" href="#cross-matching" title="Link to this heading">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">cross_matching</span></code> module allows users to cross match objects from an SDSS database with objects from other astronomical databases. The supported databases are the PANSTARRS database and Gaia. The matches are done by matching objects with the closest <code class="docutils literal notranslate"><span class="pre">ra</span></code> and <code class="docutils literal notranslate"><span class="pre">dec</span></code> values, to a degree of closeness that can be specified by the user. The user can verify the purity of their match via the calculate_purity method.</p>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+</section>
+<section id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Sudhan Chitgopkar, Noah Dohrmann, Jimmy Mendez, Stephanie Monson, Michael Zhan.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
