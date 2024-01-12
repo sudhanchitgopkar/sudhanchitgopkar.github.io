@@ -15,34 +15,6 @@
   <script src="https://kit.fontawesome.com/33dfe074ae.js" crossorigin="anonymous"></script>
   <script src="test.js"></script>
   <link rel="stylesheet" href="./style.css">
-  <style>
-    .glowing-dot {
-      position: relative;
-      display: inline-block;
-      margin-right: 5px;
-      margin-bottom: 2px
-    }
-    .glowing-dot::before {
-      content: "";
-      display: block;
-      width: 7px;
-      height: 7px;
-      background-color: #00ff00;
-      border-radius: 50%;
-      animation: glowing 2s infinite;
-    }
-    @keyframes glowing {
-      0% {
-        box-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 20px #00ff00;
-      }
-      50% {
-        box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
-      }
-      100% {
-        box-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 0px #00ff00;
-      }
-    }
-  </style>
 </head>
 <body>
   <div id="sketchDiv"></div>

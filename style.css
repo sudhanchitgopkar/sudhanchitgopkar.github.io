@@ -1,6 +1,7 @@
 * {
     background-color: #1111;
 }
+
 body {
     background-color: #1111;
     font-family: 'Inter', sans-serif;
@@ -39,3 +40,32 @@ a:visited {
     bottom: 7vh;
     padding-left: 5vw;
 }
+
+.glowing-dot {
+    position: relative;
+    display: inline-block;
+    margin-right: 5px;
+    margin-bottom: 2px
+  }
+
+  .glowing-dot::before {
+    content: "";
+    display: block;
+    width: 7px;
+    height: 7px;
+    background-color: #00ff00;
+    border-radius: 50%;
+    animation: glowing 2s infinite;
+  }
+
+  @keyframes glowing {
+    0% {
+      box-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 20px #00ff00;
+    }
+    50% {
+      box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+    }
+    100% {
+      box-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 0px #00ff00;
+    }
+  }
