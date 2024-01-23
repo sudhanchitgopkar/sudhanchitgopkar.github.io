@@ -1,4 +1,3 @@
-{%hackmd @themes/dracula %}
 ## Lecture 1 (01/22/2024)
 **Sudhan Chitgopkar, Harvard University** 
 `sudhanchitgopkar[at]g.harvard.edu`
