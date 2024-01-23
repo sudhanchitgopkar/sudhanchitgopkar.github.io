@@ -33,12 +33,10 @@
     - *Statistical parity* example: demographics of accepted students are same as in population
     - *Balance for positive class*: average score for a positive member of A equals average score for a positive member of B
     - *Within-group calibration*: per-group calibration means that discrimination can't occur towards a particular group
-:::warning    
 - Group notions fail under scrutiny
     - Very different distributions, rewards minority that "looks like" the majority
     - Surprisingly hard to test
     - Which groups should we considering? How do we deal with intersectionality?
-::: 
 
 - Individual fairness
     - People who are similar with respect to the classification task should be treated similarly
