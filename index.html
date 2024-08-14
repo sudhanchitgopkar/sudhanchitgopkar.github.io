@@ -1,35 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Sudhan Chitgopkar</title>
-  <link rel="icon" href="./favicon.ico" type="image/x-icon">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
-  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
-  <script src="https://kit.fontawesome.com/33dfe074ae.js" crossorigin="anonymous"></script>
-  <script src="sketch.js"></script>
-  <link rel="stylesheet" href="./style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudhan Chitgopkar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Satoshi:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            font-family: 'Satoshi', sans-serif;
+            background-color: #f0f0f0; /* Light gray background */
+            color: #333; /* Dark gray text */
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 800px;
+            text-align: left; /* Left-align the text */
+            line-height: 1.6;
+        }
+        a {
+            color: #007bff; /* Blue links */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .code-block {
+            display: inline-block;
+            background-color: #e8e8e8; /* Light gray background for code block */
+            padding: 1px 10px;
+            border-radius: 4px;
+            font-family: 'Fira Code', monospace; /* Monospace font for code */
+            font-size: 0.9em;
+            color: #333;
+        }
+
+        .code-inline {
+            font-family: 'Fira Code', monospace; /* Monospace font for code */
+            font-size: 0.9em;
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                overflow-y: auto; /* Allow vertical scrolling on mobile */
+                font-size: small;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #121212;
+                color: #f0f0f0;
+            }
+
+            .code-block {
+                background-color: #333;
+                color: #f0f0f0;
+            }
+
+            .code-inline {
+                color: #f0f0f0;
+            }
+
+            a {
+            color: #689fda; /* Blue links */
+            text-decoration: none;
+        }
+        }
+    </style>
 </head>
 <body>
-  <div id="sketchDiv"></div>
-  <div id="txt">
-    <h1>
-      Sudhan Chitgopkar
-    </h1>
-    <p>  <span class="glowing-dot"></span> Currently, <a href="https://sites.harvard.edu/sudhan-chitgopkar" target="_blank">Harvard</a></p> <!---•  <a href="resume.pdf" target="_blank">Resume</a></p>-->
-    <p>
-      <a href="https://www.instagram.com/not.sudhan/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-      <a href="https://www.linkedin.com/in/sudhanchitgopkar/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-      <a href="https://github.com/sudhanchitgopkar" target="_blank"><i class="fa-brands fa-github"></i></a>
-      <a href="https://open.spotify.com/user/sudhan.chitgopkar?si=45665f6f7e154d0a" target="_blank"><i class="fa-brands fa-spotify"></i></a>
-      <a href="mailto:sudhan@alumni.harvard.edu" target="_blank"><i class="fa-regular fa-envelope"></i></a>
-    </p>
-  </div>
+    <div class="container">
+        <h1>Hey, I'm Sudhan.</h1>
+        <p>
+            I'm interested in applying computation to problems in economics, financial markets, game theory, and security. 
+            I graduated from <a href="https://harvard.edu">Harvard↗</a> in 2024 with a Master's in Computational Science + Engineering.
+        </p>
+        <p>
+            I spent my time at Harvard equally across the mathematics, computer science, and economics departments. There, 
+            I worked with Prof. David Parkes on new algorithmic market-making algorithms for prediction markets, Dr. Moshe 
+            Hoffman on game-theoretic models for conflict escalation, and with the <a href="https://www.hmc.harvard.edu/about/">Harvard Management Company↗</a> on ML models 
+            to streamline investment decision-making on Harvard's $60B+ endowment.
+        </p>
+        <p>
+            Before that, I spent a few summers at <a href="https://amazon.com">Amazon↗</a> as a SWE intern automating load-shedding protocols to reduce downtime of <span class=code-inline>amazon.com</span>
+            and at <a href="https://www.southerncompany.com/innovation/vogtle-3-and-4.html">Southern Company↗</a> doing data science and threat intelligence to trace an international criminal. 
+        </p>
+        <p>
+            When I'm not working, you can usually find me tinkering with generative art 
+            (<a href="https://www.youtube.com/watch?v=la8MevQxLZw">my TEDx talk↗</a>) and mathematical visualizations 
+            (<a href="https://www.youtube.com/watch?v=mvd1Jnr-T4c&list=PLtHrXQsUhv82Iqqdx9y5r3qA9WsEaU9jv">my Harvard course↗</a>), listening to music, or reading 
+            (<a href="https://sudhan.dev/reading-list">my reading list↗</a>).
+        </p>
+        <p>
+            I'm currently doing engineering at <a href="https://palantir.com">Palantir↗</a> and ML Research at Harvard. If any of my work interests you, feel free to drop me a line at 
+            <span class="code-block">sudhan [at] alumni.harvard.edu</span>.
+        </p>
+        <p>Cheers,<br>Sudhan</p>
+    </div>
 </body>
 </html>
