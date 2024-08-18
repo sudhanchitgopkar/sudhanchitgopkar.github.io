@@ -8,12 +8,12 @@
     <style>
         body {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             margin: 0;
             padding: 20px;
-            font-family: 'Satoshi', sans-serif;
             background-color: #f0f0f0; /* Light gray background */
             color: #333; /* Dark gray text */
             overflow: hidden;
@@ -24,10 +24,17 @@
             text-align: left; /* Left-align the text */
             line-height: 1.6;
         }
-        a {
-            color: #007bff; /* Blue links */
-            text-decoration: none;
+
+        .content {
+            flex: 1;
         }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            font-style: italic;
+        }
+
         a:hover {
             text-decoration: underline;
         }
@@ -35,7 +42,7 @@
         .code-block {
             display: inline-block;
             background-color: #e8e8e8; /* Light gray background for code block */
-            padding: 1px 10px;
+            padding: 0px 3px;
             border-radius: 4px;
             font-family: 'Fira Code', monospace; /* Monospace font for code */
             font-size: 0.9em;
@@ -46,6 +53,13 @@
             font-family: 'Fira Code', monospace; /* Monospace font for code */
             font-size: 0.9em;
             color: #333;
+        }
+
+        .footer {
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
         }
 
         @media (max-width: 768px) {
@@ -69,17 +83,14 @@
             .code-inline {
                 color: #f0f0f0;
             }
+        }
 
-            a {
-            color: #689fda; /* Blue links */
-            text-decoration: none;
-        }
-        }
+        
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Hey, I'm Sudhan.</h1>
+        <p>Hey, I'm Sudhan.</p>
         <p>
             I'm interested in applying computation to problems in economics, financial markets, game theory, and security. 
             I graduated from <a href="https://harvard.edu">Harvard</a> in 2024 with a Master's in Computational Science + Engineering.
@@ -106,5 +117,6 @@
         </p>
         <p>Cheers,<br>Sudhan</p>
     </div>
+
 </body>
 </html>
